@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 from flask import Flask, render_template, request
 
 app = Flask(__name__, template_folder = 'templates')
-model = pickle.load(open(r'D:\\IPL\\ipl_score_prediction.pkl', 'rb'))
+model = pickle.load(open(r'ipl_score_prediction.pkl', 'rb'))
 
 @app.route('/', methods = ['GET'])
 def Home():
@@ -596,5 +596,5 @@ def predict():
         return render_template('home.html')
 if __name__=="__main__":
     #app.run(host = '0.0.0.0', port = 8080)
-    app.run(debug = True)
-    #app.run()
+    #app.run(debug = True)
+    app.run()
